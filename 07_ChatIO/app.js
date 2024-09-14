@@ -1,8 +1,9 @@
-var express = require('express'),
-    app = express(),
-    server = require('http').createServer(app),
-    io = require('socket.io').listen(server),
-    usernames = [];
+const express=require("express")
+ const app = express()
+ const socketIo=require("socket.io")
+  const server = require('http').createServer(app)
+    const io = socketIo(server);
+    const usernames = [];
 server.listen(process.env.PORT || 3000);
 
 app.use('/css', express.static(__dirname + '/css'));
